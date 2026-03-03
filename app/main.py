@@ -2,6 +2,15 @@ from fastapi import FastAPI,UploadFile,File,Form
 from fastapi.responses import JSONResponse
 from app.services.ats_engine import analyze_resume
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI()
 
